@@ -6,20 +6,11 @@ export const industries = [
     title: "Residential",
   },
   {
-    id: 2,
-    icon: "🏭",
-    title: "Industrial",
-  },
-  {
     id: 3,
     icon: "🏪",
     title: "Commercial",
   },
-  {
-    id: 4,
-    icon: "🏨",
-    title: "Hospitality",
-  },
+
   {
     id: 5,
     icon: "🏥",
@@ -29,15 +20,5 @@ export const industries = [
     id: 6,
     icon: "🏫",
     title: "Education",
-  },
-  {
-    id: 7,
-    icon: "🏛️",
-    title: "Government",
-  },
-  {
-    id: 8,
-    icon: "🏗️",
-    title: "Construction",
   },
 ];

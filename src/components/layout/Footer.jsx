@@ -1,126 +1,190 @@
 // File: src/components/layout/Footer.jsx
 
 import React from "react";
-import { Phone, Mail, MapPin, ChevronRight } from "lucide-react";
+import { ArrowUpRight, Phone, Mail, MapPin } from "lucide-react";
+import { motion } from "framer-motion";
 
 import { companyInfo } from "../../data/company";
 import { navigationItems } from "../../data/navigation";
+import Container from "../common/Container";
 
 function Footer() {
   const currentYear = new Date().getFullYear();
 
+  const services = [
+    "CCTV Surveillance",
+    "Networking Solutions",
+    "Access Control",
+    "Intercom Systems",
+    "Security Alarms",
+  ];
+
   return (
-    <footer className="bg-gray-900 text-gray-300">
-      <div className="container-custom section-padding">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {/* Company Info */}
-          <div>
-            <h3 className="text-xl font-bold text-white mb-4">
-              SmartView Technology
-            </h3>
+    <footer className="bg-[#161616] text-white">
+      <Container>
+        {/* Main Footer */}
+        <div className="py-20 lg:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-10">
+            {/* Brand */}
+            <div className="lg:col-span-5">
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-gray-400 mb-6">
+                SmartView Technology
+              </p>
 
-            <p className="text-gray-400 mb-5">
-              Integrated security, surveillance, networking, and access-control
-              solutions.
-            </p>
+              <h2 className="max-w-xl text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.04em] leading-[0.98]">
+                Technology that
+                <br />
+                protects what matters.
+              </h2>
 
-            <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-blue-400" />
-                <span>{companyInfo.phone}</span>
-              </div>
+              <p className="max-w-md mt-8 text-base lg:text-lg leading-7 text-gray-400">
+                Integrated security, surveillance, networking, and
+                access-control solutions designed for modern environments.
+              </p>
+            </div>
 
-              <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-blue-400" />
-                <span>{companyInfo.email}</span>
-              </div>
+            {/* Navigation */}
+            <div className="lg:col-span-2">
+              <h3 className="text-sm font-medium text-gray-400 mb-6">
+                Explore
+              </h3>
 
-              <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-blue-400 mt-1" />
-                <span>{companyInfo.address}</span>
+              <ul className="space-y-4">
+                {navigationItems.map((item) => (
+                  <li key={item.name}>
+                    <motion.a
+                      href={item.href}
+                      whileHover={{ x: 4 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 500,
+                        damping: 30,
+                      }}
+                      className="
+                        inline-flex
+                        items-center
+                        gap-2
+                        text-sm
+                        text-gray-200
+                        hover:text-white
+                        transition-colors
+                        duration-200
+                      "
+                    >
+                      {item.name}
+
+                      <ArrowUpRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 translate-y-1 transition-all duration-200 group-hover:opacity-100" />
+                    </motion.a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Services */}
+            <div className="lg:col-span-2">
+              <h3 className="text-sm font-medium text-gray-400 mb-6">
+                Services
+              </h3>
+
+              <ul className="space-y-4">
+                {services.map((service) => (
+                  <li key={service}>
+                    <a
+                      href="#services"
+                      className="
+                        text-sm
+                        text-gray-200
+                        hover:text-white
+                        transition-colors
+                        duration-200
+                      "
+                    >
+                      {service}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact */}
+            <div className="lg:col-span-3">
+              <h3 className="text-sm font-medium text-gray-400 mb-6">
+                Contact
+              </h3>
+
+              <div className="space-y-5">
+                <a
+                  href={`tel:${companyInfo.phone}`}
+                  className="
+                    group
+                    flex
+                    items-start
+                    gap-3
+                    text-sm
+                    text-gray-200
+                    hover:text-white
+                    transition-colors
+                    duration-200
+                  "
+                >
+                  <Phone className="w-4 h-4 mt-0.5 text-gray-500 group-hover:text-blue-400 transition-colors" />
+
+                  <span>{companyInfo.phone}</span>
+                </a>
+
+                <a
+                  href={`mailto:${companyInfo.email}`}
+                  className="
+                    group
+                    flex
+                    items-start
+                    gap-3
+                    text-sm
+                    text-gray-200
+                    hover:text-white
+                    transition-colors
+                    duration-200
+                  "
+                >
+                  <Mail className="w-4 h-4 mt-0.5 text-gray-500 group-hover:text-blue-400 transition-colors" />
+
+                  <span>{companyInfo.email}</span>
+                </a>
+
+                <div className="flex items-start gap-3 text-sm text-gray-200">
+                  <MapPin className="w-4 h-4 mt-0.5 text-gray-500 shrink-0" />
+
+                  <span className="leading-6">{companyInfo.address}</span>
+                </div>
               </div>
             </div>
           </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-white font-semibold mb-4">Quick Links</h4>
-
-            <ul className="space-y-3">
-              {navigationItems.map((item) => (
-                <li key={item.name}>
-                  <a
-                    href={item.href}
-                    className="flex items-center hover:text-blue-400 transition-colors"
-                  >
-                    <ChevronRight className="w-4 h-4 mr-2" />
-                    {item.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h4 className="text-white font-semibold mb-4">Our Services</h4>
-
-            <ul className="space-y-3">
-              <li>
-                <a
-                  href="#services"
-                  className="hover:text-blue-400 transition-colors"
-                >
-                  CCTV Surveillance
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#services"
-                  className="hover:text-blue-400 transition-colors"
-                >
-                  Networking Solutions
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#services"
-                  className="hover:text-blue-400 transition-colors"
-                >
-                  Access Control
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#services"
-                  className="hover:text-blue-400 transition-colors"
-                >
-                  Intercom Systems
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#services"
-                  className="hover:text-blue-400 transition-colors"
-                >
-                  Security Alarms
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
 
-        {/* Copyright */}
-        <div className="border-t border-gray-800 mt-10 pt-6 text-center">
-          <p className="text-sm text-gray-400">
-            &copy; {currentYear} SmartView Technology. All rights reserved.
+        {/* Bottom Bar */}
+        <div
+          className="
+            border-t
+            border-white/10
+            py-6
+            flex
+            flex-col
+            md:flex-row
+            items-start
+            md:items-center
+            justify-between
+            gap-4
+          "
+        >
+          <p className="text-xs text-gray-500">
+            © {currentYear} SmartView Technology. All rights reserved.
+          </p>
+
+          <p className="text-xs text-gray-500">
+            Security · Connectivity · Control
           </p>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 }
