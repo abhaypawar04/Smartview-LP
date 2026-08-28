@@ -22,11 +22,7 @@ function Home() {
       <Hero />
       <Services />
       <About />
-      <Solutions />
-      <WhyChooseUs />
       <Industries />
-      <Process />
-      <CTA />
       <Contact />
     </motion.div>
   );

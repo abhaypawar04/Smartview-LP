@@ -1,123 +1,213 @@
 // File: src/components/sections/Hero.jsx
+
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Shield, Wifi, Lock, Camera } from "lucide-react";
-import Button from "../common/Button";
 
 function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-cyan-50 pt-20">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-400 rounded-full blur-3xl"></div>
+    <section className="relative min-h-[100vh] flex items-center overflow-hidden bg-black">
+      {/* ==========================================
+          BACKGROUND
+      ========================================== */}
+
+      <div className="absolute inset-0">
+        <img
+          src="/hero.jpg"
+          alt="SmartView Technology Security Solutions"
+          className="h-full w-full object-cover"
+        />
+
+        {/* Black vintage-inspired overlays */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_30%,_black/60)]" />
       </div>
 
-      <div className="container-custom relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
+      {/* ==========================================
+          CONTENT
+      ========================================== */}
+
+      <div className="container-custom relative z-10 w-full pt-28 pb-20">
+        <div className="mx-auto max-w-6xl">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="max-w-2xl"
           >
+            {/* ==========================================
+                EYEBROW / BADGE
+            ========================================== */}
+
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full text-sm font-semibold text-blue-700 mb-6"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                delay: 0.1,
+                duration: 0.5,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="inline-flex items-center gap-2.5 rounded-full bg-black/40 px-4 py-2 backdrop-blur-md border border-white/10 mb-8"
             >
-              <span className="w-2 h-2 bg-blue-600 rounded-full mr-2 animate-pulse"></span>
-              Integrated Security Solutions
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500" />
+              </span>
+              <span className="text-[11px] font-medium uppercase tracking-[0.15em] text-white/80">
+                Integrated Security Solutions
+              </span>
             </motion.div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-gray-900 leading-tight mb-6">
-              Secure Your World with
-              <span className="gradient-text block">SmartView Technology</span>
-            </h1>
+            {/* ==========================================
+                HEADING
+            ========================================== */}
 
-            <p className="text-lg text-gray-600 mb-8 max-w-lg">
-              Comprehensive security, surveillance, networking, and
-              access-control solutions for residential, commercial, and
-              industrial clients.
-            </p>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: 0.2,
+                duration: 0.7,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-[-0.04em] leading-[1.05] text-white mb-6"
+              style={{ fontFamily: "'Ubuntu', sans-serif" }}
+            >
+              Security.
+              <br />
+              <span className="text-white">Reimagined.</span>
+            </motion.h1>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="primary" size="lg">
+            {/* ==========================================
+                SUBTITLE
+            ========================================== */}
+
+            <motion.p
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: 0.35,
+                duration: 0.6,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="text-base md:text-lg text-white/70 leading-relaxed max-w-lg mb-10 font-light"
+              style={{ fontFamily: "'Ubuntu', sans-serif" }}
+            >
+              Smart security, surveillance, networking, and access-control
+              solutions built for modern homes, businesses, and industries.
+            </motion.p>
+
+            {/* ==========================================
+                CTA GROUP
+            ========================================== */}
+
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: 0.5,
+                duration: 0.6,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+            >
+              {/* Primary CTA */}
+              <a
+                href="#solutions"
+                className="group inline-flex items-center justify-center rounded-full bg-blue-600 px-8 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-600/25 active:scale-95"
+                style={{ fontFamily: "'Ubuntu', sans-serif" }}
+              >
                 Explore Solutions
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-              <Button variant="secondary" size="lg">
-                Get a Free Quote
-              </Button>
-            </div>
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </a>
+            </motion.div>
 
-            {/* Trust Indicators */}
-            <div className="flex items-center gap-8 mt-10">
-              <div className="flex items-center gap-2">
-                <Shield className="w-5 h-5 text-blue-600" />
-                <span className="text-sm font-medium text-gray-700">
+            {/* ==========================================
+                TRUST INDICATORS
+            ========================================== */}
+
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: 0.65,
+                duration: 0.6,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="mt-16 flex flex-wrap items-center gap-x-8 gap-y-4 pt-6 border-t border-white/10"
+            >
+              <div className="flex items-center gap-2.5">
+                <div className="rounded-full bg-white/10 p-1.5">
+                  <Shield className="h-3.5 w-3.5 text-white/60" />
+                </div>
+                <span
+                  className="text-xs font-medium text-white/60"
+                  style={{ fontFamily: "'Ubuntu', sans-serif" }}
+                >
                   Certified
                 </span>
               </div>
-              <div className="flex items-center gap-2">
-                <Wifi className="w-5 h-5 text-blue-600" />
-                <span className="text-sm font-medium text-gray-700">
+
+              <div className="flex items-center gap-2.5">
+                <div className="rounded-full bg-white/10 p-1.5">
+                  <Wifi className="h-3.5 w-3.5 text-white/60" />
+                </div>
+                <span
+                  className="text-xs font-medium text-white/60"
+                  style={{ fontFamily: "'Ubuntu', sans-serif" }}
+                >
                   Connected
                 </span>
               </div>
-              <div className="flex items-center gap-2">
-                <Lock className="w-5 h-5 text-blue-600" />
-                <span className="text-sm font-medium text-gray-700">
+
+              <div className="flex items-center gap-2.5">
+                <div className="rounded-full bg-white/10 p-1.5">
+                  <Lock className="h-3.5 w-3.5 text-white/60" />
+                </div>
+                <span
+                  className="text-xs font-medium text-white/60"
+                  style={{ fontFamily: "'Ubuntu', sans-serif" }}
+                >
                   Secure
                 </span>
               </div>
-              <div className="flex items-center gap-2">
-                <Camera className="w-5 h-5 text-blue-600" />
-                <span className="text-sm font-medium text-gray-700">24/7</span>
+
+              <div className="flex items-center gap-2.5">
+                <div className="rounded-full bg-white/10 p-1.5">
+                  <Camera className="h-3.5 w-3.5 text-white/60" />
+                </div>
+                <span
+                  className="text-xs font-medium text-white/60"
+                  style={{ fontFamily: "'Ubuntu', sans-serif" }}
+                >
+                  24/7 Monitoring
+                </span>
               </div>
-            </div>
-          </motion.div>
 
-          {/* Right Content - Hero Image */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
-          >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <img
-                src="https://images.unsplash.com/photo-1558002038-1055907df827?w=800&auto=format&fit=crop&q=80"
-                alt="SmartView Technology Security Solutions"
-                className="w-full h-auto"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent"></div>
-            </div>
-
-            {/* Floating Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-              className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-4 min-w-[140px]"
-            >
-              <div className="text-2xl font-bold text-blue-600">500+</div>
-              <div className="text-sm text-gray-600">Clients Served</div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8 }}
-              className="absolute -top-6 -right-6 bg-white rounded-xl shadow-xl p-4 min-w-[140px]"
-            >
-              <div className="text-2xl font-bold text-green-600">99.9%</div>
-              <div className="text-sm text-gray-600">Uptime Guarantee</div>
+              {/* Trust badge */}
+              <div className="ml-auto flex items-center gap-2 rounded-full bg-white/5 px-3.5 py-1.5 border border-white/5">
+                <span
+                  className="text-[10px] font-semibold uppercase tracking-[0.1em] text-white/40"
+                  style={{ fontFamily: "'Ubuntu', sans-serif" }}
+                >
+                  Trusted by 500+ clients
+                </span>
+              </div>
             </motion.div>
           </motion.div>
         </div>
       </div>
+
+      {/* ==========================================
+          DECORATIVE ELEMENTS
+      ========================================== */}
+
+      {/* Subtle gradient orbs */}
+      <div className="absolute -right-32 -top-32 h-[600px] w-[600px] rounded-full bg-blue-500/10 blur-3xl" />
+      <div className="absolute -bottom-32 -left-32 h-[500px] w-[500px] rounded-full bg-blue-400/10 blur-3xl" />
+
+      {/* Vintage grain overlay */}
+      <div className="absolute inset-0 opacity-[0.03] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc0IiBudW1PY3RhdmVzPSIzIiAvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNmKSIgb3BhY2l0eT0iMC4xIiAvPjwvc3ZnPg==')]" />
     </section>
   );
 }

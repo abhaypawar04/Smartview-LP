@@ -1,109 +1,142 @@
 // File: src/components/sections/About.jsx
+
 import React from "react";
 import { motion } from "framer-motion";
-import { ShieldCheck, Users, Award, Zap } from "lucide-react";
-import SectionHeading from "../common/SectionHeading";
+import { CheckCircle2 } from "lucide-react";
 import Container from "../common/Container";
 
 function About() {
-  const stats = [
-    { icon: ShieldCheck, label: "Years of Experience", value: "15+" },
-    { icon: Users, label: "Satisfied Clients", value: "500+" },
-    { icon: Award, label: "Industry Awards", value: "25" },
-    { icon: Zap, label: "Projects Completed", value: "1000+" },
+  const features = [
+    "Expert installation and maintenance services",
+    "Customized solutions for every client",
+    "24/7 support and monitoring services",
+    "Cutting-edge technology integration",
   ];
 
   return (
-    <section id="about" className="section-padding bg-white">
+    <section
+      id="about"
+      className="relative overflow-hidden py-16 sm:py-20 lg:py-24"
+      style={{
+        fontFamily:
+          '-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif',
+      }}
+    >
+      {/* ==========================================
+          BACKGROUND IMAGE
+      ========================================== */}
+
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/about.jpg"
+          alt="About SmartView Technology"
+          className="h-full w-full object-cover"
+        />
+
+        {/* Gradient overlays for depth */}
+      </div>
+
+      {/* ==========================================
+          SUBTLE BACKGROUND GLOW
+      ========================================== */}
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-1/2 top-0 z-0 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-blue-500/5 blur-3xl"
+      />
+
+      {/* ==========================================
+          MAIN CONTENT - LEFT ALIGNED WITH OFFSET
+      ========================================== */}
+
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <SectionHeading
-              label="About Us"
-              title="Your Trusted Security Partner"
-              subtitle="SmartView Technology delivers innovative security and networking solutions backed by years of industry expertise and a commitment to excellence."
-              centered={false}
-            />
-
-            <div className="space-y-6 mt-8">
-              <p className="text-gray-600">
-                We combine cutting-edge technology with professional expertise
-                to provide comprehensive security solutions that protect what
-                matters most to you.
-              </p>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  </div>
-                  <span className="text-gray-600">
-                    Expert installation and maintenance services
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  </div>
-                  <span className="text-gray-600">
-                    Customized solutions for every client
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  </div>
-                  <span className="text-gray-600">
-                    24/7 support and monitoring services
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </motion.div>
+        <div className="relative z-10">
+          {/* ==========================================
+              LEFT ALIGNED CONTENT WITH OFFSET
+          ========================================== */}
 
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative"
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="max-w-4xl pl-4 sm:pl-8 md:pl-12 lg:pl-16"
           >
-            <div className="grid grid-cols-2 gap-6">
-              <div className="space-y-6">
-                <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 text-center">
-                  <div className="text-4xl font-bold text-blue-600">15+</div>
-                  <div className="text-sm text-gray-600 mt-1">
-                    Years of Excellence
-                  </div>
-                </div>
-                <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 text-center">
-                  <div className="text-4xl font-bold text-blue-600">500+</div>
-                  <div className="text-sm text-gray-600 mt-1">
-                    Happy Clients
-                  </div>
-                </div>
-              </div>
-              <div className="space-y-6 mt-12">
-                <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 text-center">
-                  <div className="text-4xl font-bold text-blue-600">25</div>
-                  <div className="text-sm text-gray-600 mt-1">
-                    Industry Awards
-                  </div>
-                </div>
-                <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 text-center">
-                  <div className="text-4xl font-bold text-blue-600">1000+</div>
-                  <div className="text-sm text-gray-600 mt-1">
-                    Projects Completed
-                  </div>
-                </div>
-              </div>
+            {/* Eyebrow / Label - Left Aligned */}
+            <div className="mb-4 flex items-center gap-4">
+              <span className="h-px w-8 bg-blue-600/60" />
+              <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-blue-600">
+                About Us
+              </span>
             </div>
 
-            <div className="absolute -inset-4 bg-gradient-to-r from-blue-400/10 to-cyan-400/10 rounded-3xl -z-10 blur-2xl"></div>
+            {/* Heading - Left Aligned */}
+            <h2
+              className="text-4xl font-bold tracking-[-0.04em] text-gray-950 sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05]"
+              style={{
+                fontFamily:
+                  '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif',
+              }}
+            >
+              Your Trusted
+              <br />
+              <span className="text-gray-950">Security Partner</span>
+            </h2>
+
+            {/* Description - Left Aligned */}
+            <p
+              className="mt-4 max-w-2xl text-[17px] font-light leading-relaxed text-gray-700 sm:text-lg"
+              style={{
+                fontFamily:
+                  '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif',
+              }}
+            >
+              SmartView Technology delivers innovative security and networking
+              solutions backed by years of industry expertise and a commitment
+              to excellence.
+            </p>
+
+            <p
+              className="mt-3 max-w-2xl text-[17px] font-light leading-relaxed text-gray-700 sm:text-lg"
+              style={{
+                fontFamily:
+                  '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif',
+              }}
+            >
+              We combine cutting-edge technology with professional expertise to
+              provide comprehensive security solutions that protect what matters
+              most to you.
+            </p>
+
+            {/* Subtle divider - Left Aligned */}
+            <div className="mt-8 h-px w-16 bg-gradient-to-r from-blue-400/40 to-transparent" />
+
+            {/* Features List - Left Aligned */}
+            <div className="mt-8 max-w-xl space-y-3">
+              {features.map((feature, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1, duration: 0.4 }}
+                  className="flex items-center gap-3"
+                >
+                  <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-600/10">
+                    <CheckCircle2 className="h-3.5 w-3.5 text-blue-600" />
+                  </div>
+                  <span
+                    className="text-[15px] text-gray-700"
+                    style={{
+                      fontFamily:
+                        '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif',
+                    }}
+                  >
+                    {feature}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </Container>

@@ -4,40 +4,25 @@ export const industries = [
     id: 1,
     icon: "🏢",
     title: "Residential",
-  },
-  {
-    id: 2,
-    icon: "🏭",
-    title: "Industrial",
+    image: "residential.jpg",
   },
   {
     id: 3,
     icon: "🏪",
     title: "Commercial",
+    image: "corporate.jpg",
   },
-  {
-    id: 4,
-    icon: "🏨",
-    title: "Hospitality",
-  },
+
   {
     id: 5,
     icon: "🏥",
     title: "Healthcare",
+    image: "healthcare.jpg",
   },
   {
     id: 6,
     icon: "🏫",
     title: "Education",
-  },
-  {
-    id: 7,
-    icon: "🏛️",
-    title: "Government",
-  },
-  {
-    id: 8,
-    icon: "🏗️",
-    title: "Construction",
+    image: "education.jpg",
   },
 ];
