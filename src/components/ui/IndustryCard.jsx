@@ -1,22 +1,70 @@
 // File: src/components/ui/IndustryCard.jsx
+
 import React from "react";
 import { motion } from "framer-motion";
 
 function IndustryCard({ industry, index }) {
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
-      whileInView={{ opacity: 1, scale: 1 }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 0.1 }}
-      className="group bg-white rounded-2xl p-6 text-center hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200"
+      transition={{
+        delay: index * 0.06,
+        duration: 0.5,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      className="group relative overflow-hidden rounded-2xl bg-white transition-all duration-400 hover:-translate-y-1.5 hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] border border-gray-100/80"
+      style={{
+        fontFamily:
+          '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif',
+      }}
     >
-      <div className="w-16 h-16 rounded-full bg-blue-100 group-hover:bg-blue-600 transition-colors duration-300 flex items-center justify-center mx-auto mb-4">
-        <span className="text-3xl">{industry.icon}</span>
+      {/* ==========================================
+          IMAGE
+      ========================================== */}
+
+      <div className="relative h-40 w-full overflow-hidden bg-gray-100">
+        {industry.image ? (
+          <img
+            src={industry.image}
+            alt={industry.title}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          // Fallback: Show icon if no image
+          <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100/50">
+            <span className="text-5xl opacity-60">{industry.icon}</span>
+          </div>
+        )}
+
+        {/* Image overlay gradient */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
       </div>
-      <h4 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
-        {industry.title}
-      </h4>
+
+      {/* ==========================================
+          CONTENT
+      ========================================== */}
+
+      <div className="p-5 text-center">
+        {/* Icon (small, above title) */}
+        <div className="mb-2 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50/80 text-xl transition-all duration-400 group-hover:bg-blue-600 group-hover:shadow-lg group-hover:shadow-blue-600/20">
+          <span className="transition-all duration-400 group-hover:scale-110 group-hover:text-white">
+            {industry.icon}
+          </span>
+        </div>
+
+        {/* Title */}
+        <h4
+          className="text-[16px] font-semibold tracking-[-0.02em] text-gray-950 transition-colors duration-300 group-hover:text-blue-600"
+          style={{
+            fontFamily:
+              '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif',
+          }}
+        >
+          {industry.title}
+        </h4>
+      </div>
     </motion.div>
   );
 }
