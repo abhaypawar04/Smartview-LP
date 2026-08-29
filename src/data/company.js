@@ -1,11 +1,12 @@
 // File: src/data/company.js
 export const companyInfo = {
-  name: "SmartView Technology",
+  name: "SmartVision Technology",
   tagline: "Integrated Security & Networking Solutions",
-  founded: "2010",
-  phone: "+1 (555) 123-4567",
-  email: "info@smartviewtech.com",
-  address: "123 Tech Park Drive, Suite 100, Silicon Valley, CA 94043",
+  founded: "2015",
+  phone: "+91 8830620793",
+  email: "smartvisiontechnology90@gmail.com",
+  address:
+    "102, Sonavane Building, Shivanjali Lane No. 2,Dattanagar, Ambegaon BK, Pune – 411046, Maharashtra, India",
   social: {
     facebook: "https://facebook.com/smartviewtech",
     twitter: "https://twitter.com/smartviewtech",
