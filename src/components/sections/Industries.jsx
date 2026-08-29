@@ -28,7 +28,7 @@ function Industries() {
         />
 
         {/* Light overlay for readability */}
-        <div className="absolute inset-0 bg-black/65 backdrop-blur-[5px]" />
+        <div className="absolute inset-0 bg-black/10 backdrop-blur-[5px]" />
 
         {/* Gradient overlays for depth */}
         {/* <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-white/50 to-white/50" />

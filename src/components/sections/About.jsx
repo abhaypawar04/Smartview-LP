@@ -34,7 +34,7 @@ function About() {
         />
 
         {/* Gradient overlays for depth */}
-        <div className="absolute inset-0 bg-black/65 backdrop-blur-[3px]" />
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-[4px]" />
       </div>
 
       {/* ==========================================
