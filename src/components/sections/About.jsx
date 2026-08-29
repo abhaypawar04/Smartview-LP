@@ -34,6 +34,7 @@ function About() {
         />
 
         {/* Gradient overlays for depth */}
+        <div className="absolute inset-0 bg-black/65 backdrop-blur-[3px]" />
       </div>
 
       {/* ==========================================
@@ -72,7 +73,7 @@ function About() {
 
             {/* Heading - Left Aligned */}
             <h2
-              className="text-4xl font-bold tracking-[-0.04em] text-gray-950 sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05]"
+              className="text-4xl font-bold tracking-[-0.04em] text-white sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05]"
               style={{
                 fontFamily:
                   '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif',
@@ -80,12 +81,12 @@ function About() {
             >
               Your Trusted
               <br />
-              <span className="text-gray-950">Security Partner</span>
+              <span className="text-white">Security Partner</span>
             </h2>
 
             {/* Description - Left Aligned */}
             <p
-              className="mt-4 max-w-2xl text-[17px] font-light leading-relaxed text-gray-700 sm:text-lg"
+              className="mt-4 max-w-2xl text-[17px] font-light leading-relaxed text-gray-300 sm:text-lg"
               style={{
                 fontFamily:
                   '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif',
@@ -97,7 +98,7 @@ function About() {
             </p>
 
             <p
-              className="mt-3 max-w-2xl text-[17px] font-light leading-relaxed text-gray-700 sm:text-lg"
+              className="mt-3 max-w-2xl text-[17px] font-light leading-relaxed text-gray-300 sm:text-lg"
               style={{
                 fontFamily:
                   '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif',
@@ -126,7 +127,7 @@ function About() {
                     <CheckCircle2 className="h-3.5 w-3.5 text-blue-600" />
                   </div>
                   <span
-                    className="text-[15px] text-gray-700"
+                    className="text-[15px] text-gray-300"
                     style={{
                       fontFamily:
                         '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif',
