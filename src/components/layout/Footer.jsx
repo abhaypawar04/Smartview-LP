@@ -28,7 +28,7 @@ function Footer() {
             {/* Brand */}
             <div className="lg:col-span-5">
               <p className="text-xs font-medium uppercase tracking-[0.18em] text-gray-400 mb-6">
-                SmartView Technology
+                SmartVision Technology
               </p>
 
               <h2 className="max-w-xl text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.04em] leading-[0.98]">
@@ -177,7 +177,7 @@ function Footer() {
           "
         >
           <p className="text-xs text-gray-500">
-            © {currentYear} SmartView Technology. All rights reserved.
+            © {currentYear} SmartVision Technology. All rights reserved.
           </p>
 
           <p className="text-xs text-gray-500">
