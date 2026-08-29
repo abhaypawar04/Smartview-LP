@@ -10,7 +10,7 @@ function Services() {
   return (
     <section
       id="services"
-      className="relative overflow-hidden py-16 sm:py-20 lg:py-24"
+      className="relative overflow-hidden py-16 sm:py-20 lg:py-24 transform-gpu"
       style={{
         fontFamily:
           '-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif',
@@ -24,25 +24,17 @@ function Services() {
         <img
           src="/services.jpg"
           alt="SmartView Technology Services"
+          loading="lazy"
+          decoding="async"
           className="h-full w-full object-cover"
         />
 
         {/* Dark overlay for readability */}
-        <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-black/70" />
 
         {/* Gradient overlays for depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/70" />
       </div>
-
-      {/* ==========================================
-          SUBTLE BACKGROUND GLOW
-      ========================================== */}
-
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-0 z-0 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl"
-      />
 
       {/* ==========================================
           MAIN CONTENT - LEFT ALIGNED WITH OFFSET
@@ -52,14 +44,14 @@ function Services() {
         <div className="relative z-10">
           {/* Section Header - Left Aligned with slight right offset */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{
-              duration: 0.7,
+              duration: 0.5,
               ease: [0.22, 1, 0.36, 1],
             }}
-            className="max-w-3xl pl-4 sm:pl-8 md:pl-12 lg:pl-16"
+            className="max-w-3xl pl-4 sm:pl-8 md:pl-12 lg:pl-16 transform-gpu"
           >
             {/* Eyebrow / Label - Left Aligned */}
             <div className="mb-3 flex items-center gap-4">
@@ -77,7 +69,7 @@ function Services() {
             </h2>
 
             {/* Subtitle - Left Aligned */}
-            <p className="mt-4 max-w-xl text-[17px] font-light leading-relaxed text-white/70 sm:text-lg md:text-xl">
+            <p className="mt-4 max-w-xl text-[17px] font-normal leading-relaxed text-white/80 sm:text-lg md:text-xl">
               End-to-end security and networking solutions, thoughtfully
               designed to protect what matters most.
             </p>
@@ -88,33 +80,20 @@ function Services() {
 
           {/* Services Grid */}
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{
-              duration: 0.7,
+              duration: 0.5,
               delay: 0.1,
               ease: [0.22, 1, 0.36, 1],
             }}
-            className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+            className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 transform-gpu"
           >
             {services.map((service, index) => (
               <ServiceCard key={service.id} service={service} index={index} />
             ))}
           </motion.div>
-
-          {/* Bottom CTA - Left Aligned with offset */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
-            transition={{
-              duration: 0.6,
-              delay: 0.3,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            className="mt-12 pl-4 sm:pl-8 md:pl-12 lg:pl-16"
-          ></motion.div>
         </div>
       </Container>
     </section>
@@ -122,3 +101,4 @@ function Services() {
 }
 
 export default Services;
+

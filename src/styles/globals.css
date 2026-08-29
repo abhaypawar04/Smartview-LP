@@ -1,15 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
-
 @import "tailwindcss";
 
 @layer base {
   html {
     scroll-behavior: smooth;
-    font-family: "Inter", sans-serif;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   body {
-    @apply bg-white text-gray-900 antialiased;
+    @apply bg-white text-gray-900 antialiased overflow-x-hidden;
   }
 
   h1,
@@ -19,6 +20,10 @@
   h5,
   h6 {
     @apply font-bold tracking-tight;
+  }
+
+  img {
+    content-visibility: auto;
   }
 }
 
@@ -49,5 +54,6 @@
 @utility card-hover {
   @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
 }
+
 
 

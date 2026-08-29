@@ -63,7 +63,7 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-black py-16 sm:py-20 lg:py-24"
+      className="relative overflow-hidden bg-black py-16 sm:py-20 lg:py-24 transform-gpu"
       style={{
         fontFamily:
           '-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif',
@@ -73,9 +73,7 @@ function Contact() {
           BACKGROUND DECORATIONS
       ========================================== */}
 
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 via-black to-black" />
-      <div className="absolute -top-40 -right-40 h-[600px] w-[600px] rounded-full bg-blue-500/10 blur-3xl" />
-      <div className="absolute -bottom-40 -left-40 h-[500px] w-[500px] rounded-full bg-blue-400/10 blur-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-950 via-black to-black" />
 
       {/* ==========================================
           MAIN CONTENT
@@ -84,19 +82,19 @@ function Contact() {
       <Container>
         <div className="relative z-10">
           {/* ==========================================
-              SECTION HEADER - LEFT ALIGNED WITH OFFSET
+              SECTION HEADER
           ========================================== */}
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-3xl pl-4 sm:pl-8 md:pl-12 lg:pl-16"
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            className="max-w-3xl pl-4 sm:pl-8 md:pl-12 lg:pl-16 transform-gpu"
           >
             {/* Eyebrow / Label */}
             <div className="mb-4 flex items-center gap-4">
-              <span className="h-px w-8 bg-blue-400/60" />
+              <span className="h-px w-8 bg-blue-500" />
               <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-blue-400">
                 Contact Us
               </span>
@@ -116,7 +114,7 @@ function Contact() {
 
             {/* Subtitle */}
             <p
-              className="mt-4 max-w-2xl text-[17px] font-light leading-relaxed text-white/60 sm:text-lg"
+              className="mt-4 max-w-2xl text-[17px] font-normal leading-relaxed text-white/80 sm:text-lg"
               style={{
                 fontFamily:
                   '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif',
@@ -126,7 +124,7 @@ function Contact() {
             </p>
 
             {/* Subtle divider */}
-            <div className="mt-8 h-px w-16 bg-gradient-to-r from-blue-400/40 to-transparent" />
+            <div className="mt-8 h-px w-16 bg-gradient-to-r from-blue-400/60 to-transparent" />
           </motion.div>
 
           {/* ==========================================
@@ -136,15 +134,15 @@ function Contact() {
           <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
             {/* Contact Form */}
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0, x: -15 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="pl-4 sm:pl-8 md:pl-12 lg:pl-16"
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="pl-4 sm:pl-8 md:pl-12 lg:pl-16 transform-gpu"
             >
-              <div className="rounded-2xl bg-white/5 backdrop-blur-xl p-6 sm:p-8 border border-white/10">
+              <div className="rounded-2xl bg-neutral-900/90 p-6 sm:p-8 border border-white/10 shadow-lg">
                 <h3
-                  className="mb-6 text-xl font-semibold text-white"
+                  className="mb-6 text-xl font-bold text-white"
                   style={{
                     fontFamily:
                       '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif',
@@ -157,7 +155,7 @@ function Contact() {
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-sm font-medium text-white/70 mb-1.5"
+                      className="block text-sm font-medium text-white/80 mb-1.5"
                       style={{
                         fontFamily:
                           '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif',
@@ -172,7 +170,7 @@ function Contact() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-white/30 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400/20 transition-all duration-300"
+                      className="w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-white placeholder:text-white/30 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400/20 transition-all duration-200"
                       placeholder="John Doe"
                     />
                   </div>
@@ -180,7 +178,7 @@ function Contact() {
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-sm font-medium text-white/70 mb-1.5"
+                      className="block text-sm font-medium text-white/80 mb-1.5"
                       style={{
                         fontFamily:
                           '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif',
@@ -195,7 +193,7 @@ function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-white/30 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400/20 transition-all duration-300"
+                      className="w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-white placeholder:text-white/30 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400/20 transition-all duration-200"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -203,7 +201,7 @@ function Contact() {
                   <div>
                     <label
                       htmlFor="phone"
-                      className="block text-sm font-medium text-white/70 mb-1.5"
+                      className="block text-sm font-medium text-white/80 mb-1.5"
                       style={{
                         fontFamily:
                           '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif',
@@ -217,7 +215,7 @@ function Contact() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-white/30 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400/20 transition-all duration-300"
+                      className="w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-white placeholder:text-white/30 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400/20 transition-all duration-200"
                       placeholder="+1 (555) 123-4567"
                     />
                   </div>
@@ -225,7 +223,7 @@ function Contact() {
                   <div>
                     <label
                       htmlFor="message"
-                      className="block text-sm font-medium text-white/70 mb-1.5"
+                      className="block text-sm font-medium text-white/80 mb-1.5"
                       style={{
                         fontFamily:
                           '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif',
@@ -240,7 +238,7 @@ function Contact() {
                       onChange={handleChange}
                       required
                       rows="4"
-                      className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-white/30 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400/20 transition-all duration-300 resize-none"
+                      className="w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-white placeholder:text-white/30 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400/20 transition-all duration-200 resize-none"
                       placeholder="Tell us about your security needs..."
                     />
                   </div>
@@ -248,7 +246,7 @@ function Contact() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="group w-full rounded-full bg-blue-600 px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-600/30 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="group w-full rounded-full bg-blue-600 px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-600/30 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                     style={{
                       fontFamily:
                         '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif',
@@ -289,7 +287,7 @@ function Contact() {
                     <motion.p
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="text-center text-sm text-green-400"
+                      className="text-center text-sm text-green-400 font-medium"
                     >
                       ✓ Message sent successfully! We'll get back to you soon.
                     </motion.p>
@@ -300,14 +298,15 @@ function Contact() {
 
             {/* Contact Info */}
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
+              initial={{ opacity: 0, x: 15 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="transform-gpu"
             >
-              <div className="rounded-2xl bg-white/5 backdrop-blur-xl p-6 sm:p-8 border border-white/10 h-full">
+              <div className="rounded-2xl bg-neutral-900/90 p-6 sm:p-8 border border-white/10 h-full shadow-lg">
                 <h3
-                  className="mb-6 text-xl font-semibold text-white"
+                  className="mb-6 text-xl font-bold text-white"
                   style={{
                     fontFamily:
                       '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif',
@@ -320,12 +319,8 @@ function Contact() {
                   {contactInfo.map((info, index) => {
                     const Icon = info.icon;
                     return (
-                      <motion.div
+                      <div
                         key={index}
-                        initial={{ opacity: 0, x: -10 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: index * 0.1 + 0.3, duration: 0.4 }}
                         className="flex items-start gap-4"
                       >
                         <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-600/20 text-blue-400">
@@ -344,7 +339,7 @@ function Contact() {
                           {info.href ? (
                             <a
                               href={info.href}
-                              className="text-white transition-colors hover:text-blue-400"
+                              className="text-white transition-colors hover:text-blue-400 font-medium"
                               style={{
                                 fontFamily:
                                   '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif',
@@ -354,7 +349,7 @@ function Contact() {
                             </a>
                           ) : (
                             <div
-                              className="text-white/80"
+                              className="text-white/90 font-medium"
                               style={{
                                 fontFamily:
                                   '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif',
@@ -364,7 +359,7 @@ function Contact() {
                             </div>
                           )}
                         </div>
-                      </motion.div>
+                      </div>
                     );
                   })}
                 </div>
@@ -373,8 +368,8 @@ function Contact() {
                 <div className="mt-8 overflow-hidden rounded-xl bg-white/5 border border-white/10 h-48">
                   <div className="flex h-full w-full items-center justify-center">
                     <div className="text-center">
-                      <MapPin className="mx-auto h-8 w-8 text-white/20" />
-                      <p className="mt-2 text-sm text-white/30">
+                      <MapPin className="mx-auto h-8 w-8 text-white/30" />
+                      <p className="mt-2 text-sm text-white/40">
                         Google Maps Integration
                       </p>
                     </div>
@@ -383,6 +378,7 @@ function Contact() {
               </div>
             </motion.div>
           </div>
+
         </div>
       </Container>
     </section>
