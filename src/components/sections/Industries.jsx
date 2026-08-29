@@ -28,11 +28,11 @@ function Industries() {
         />
 
         {/* Light overlay for readability */}
-        <div className="absolute inset-0 bg-white/10 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-black/65 backdrop-blur-[5px]" />
 
         {/* Gradient overlays for depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-white/50 to-white/50" />
-        <div className="absolute inset-0 bg-gradient-to-r from-white/50 via-transparent to-white/50" />
+        {/* <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-white/50 to-white/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/50 via-transparent to-white/50" /> */}
       </div>
 
       {/* ==========================================
@@ -64,14 +64,14 @@ function Industries() {
             {/* Eyebrow / Label */}
             <div className="mb-4 flex items-center gap-4">
               <span className="h-px w-8 bg-blue-600/60" />
-              <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-blue-600">
+              <span className="text-[12px] font-semibold uppercase tracking-[0.2em] text-blue-500/90">
                 Industries
               </span>
             </div>
 
             {/* Heading */}
             <h2
-              className="text-4xl font-bold tracking-[-0.04em] text-gray-950 sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05]"
+              className="text-4xl font-bold tracking-[-0.04em] text-white sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05]"
               style={{
                 fontFamily:
                   '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif',
@@ -79,12 +79,12 @@ function Industries() {
             >
               Serving Diverse
               <br />
-              <span className="text-gray-950">Industries</span>
+              <span className="text-white">Industries</span>
             </h2>
 
             {/* Subtitle */}
             <p
-              className="mt-4 max-w-2xl text-[17px] font-light leading-relaxed text-gray-700 sm:text-lg"
+              className="mt-4 max-w-2xl text-[17px] font-light leading-relaxed text-gray-300 sm:text-lg"
               style={{
                 fontFamily:
                   '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif',
@@ -95,7 +95,7 @@ function Industries() {
             </p>
 
             {/* Subtle divider */}
-            <div className="mt-8 h-px w-16 bg-gradient-to-r from-blue-400/40 to-transparent" />
+            <div className="mt-8 h-px w-16 bg-gradient-to-r from-blue-400/to-transparent" />
           </motion.div>
 
           {/* ==========================================

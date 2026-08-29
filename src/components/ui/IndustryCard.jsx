@@ -48,11 +48,6 @@ function IndustryCard({ industry, index }) {
 
       <div className="p-5 text-center">
         {/* Icon (small, above title) */}
-        <div className="mb-2 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50/80 text-xl transition-all duration-400 group-hover:bg-blue-600 group-hover:shadow-lg group-hover:shadow-blue-600/20">
-          <span className="transition-all duration-400 group-hover:scale-110 group-hover:text-white">
-            {industry.icon}
-          </span>
-        </div>
 
         {/* Title */}
         <h4
