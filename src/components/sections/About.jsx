@@ -81,7 +81,7 @@ function About() {
                   '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif',
               }}
             >
-              SmartView Technology delivers innovative security and networking
+              SmartVision Technology delivers innovative security and networking
               solutions backed by years of industry expertise and a commitment
               to excellence.
             </p>
@@ -104,10 +104,7 @@ function About() {
             {/* Features List */}
             <div className="mt-8 max-w-xl space-y-3">
               {features.map((feature, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-3"
-                >
+                <div key={index} className="flex items-center gap-3">
                   <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-500/20">
                     <CheckCircle2 className="h-3.5 w-3.5 text-blue-400" />
                   </div>
@@ -131,4 +128,3 @@ function About() {
 }
 
 export default About;
-

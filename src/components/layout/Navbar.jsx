@@ -121,7 +121,6 @@ function Navbar() {
               className="group flex shrink-0 items-center gap-2 outline-none cursor-pointer"
               aria-label="SmartView Technology Home"
             >
-
               <div className="flex items-center gap-2">
                 <span
                   className="text-[20px] font-bold tracking-[-0.03em] transition-colors duration-300 sm:text-[22px] lg:text-[24px]"
@@ -134,7 +133,7 @@ function Navbar() {
                     color: isScrolled ? "#111827" : "#ffffff",
                   }}
                 >
-                  SmartView
+                  SmartVision
                 </span>
                 <span
                   className="hidden text-[11px] font-medium uppercase tracking-[0.12em] transition-colors duration-300 sm:block"
