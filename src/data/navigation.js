@@ -12,7 +12,7 @@ export const navigationItems = [
       { name: "Security Systems", href: "#services" },
     ],
   },
-  { name: "Solutions", href: "#solutions" },
   { name: "Industries", href: "#industries" },
   { name: "Contact", href: "#contact" },
 ];
+

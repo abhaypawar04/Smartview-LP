@@ -97,11 +97,11 @@ function Navbar() {
 
       <header
         className={`
-          fixed inset-x-0 top-0 z-50
-          transition-all duration-500
+          fixed inset-x-0 top-0 z-50 transform-gpu
+          transition-all duration-300
           ${
             isScrolled
-              ? "bg-white/80 backdrop-blur-2xl border-b border-black/5 shadow-[0_2px_20px_rgba(0,0,0,0.06)]"
+              ? "bg-white/90 backdrop-blur-md border-b border-black/5 shadow-sm"
               : "bg-transparent border-b border-transparent"
           }
         `}
@@ -114,10 +114,14 @@ function Navbar() {
 
             <Link
               to="/"
-              onClick={closeAllMenus}
-              className="group flex shrink-0 items-center gap-2 outline-none"
+              onClick={(e) => {
+                closeAllMenus();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              className="group flex shrink-0 items-center gap-2 outline-none cursor-pointer"
               aria-label="SmartView Technology Home"
             >
+
               <div className="flex items-center gap-2">
                 <span
                   className="text-[20px] font-bold tracking-[-0.03em] transition-colors duration-300 sm:text-[22px] lg:text-[24px]"

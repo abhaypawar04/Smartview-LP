@@ -6,15 +6,15 @@ import { motion } from "framer-motion";
 function IndustryCard({ industry, index }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 15 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: true, amount: 0.1 }}
       transition={{
-        delay: index * 0.06,
-        duration: 0.5,
+        delay: Math.min(index * 0.05, 0.3),
+        duration: 0.4,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className="group relative overflow-hidden rounded-2xl bg-white transition-all duration-400 hover:-translate-y-1.5 hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] border border-gray-100/80"
+      className="group relative overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 transform-gpu hover:-translate-y-1 hover:shadow-xl border border-gray-100/90"
       style={{
         fontFamily:
           '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif',
@@ -24,11 +24,13 @@ function IndustryCard({ industry, index }) {
           IMAGE
       ========================================== */}
 
-      <div className="relative h-40 w-full overflow-hidden bg-gray-100">
+      <div className="relative h-44 w-full overflow-hidden bg-gray-100">
         {industry.image ? (
           <img
             src={industry.image}
             alt={industry.title}
+            loading="lazy"
+            decoding="async"
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
@@ -39,7 +41,7 @@ function IndustryCard({ industry, index }) {
         )}
 
         {/* Image overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
       </div>
 
       {/* ==========================================
@@ -47,11 +49,9 @@ function IndustryCard({ industry, index }) {
       ========================================== */}
 
       <div className="p-5 text-center">
-        {/* Icon (small, above title) */}
-
         {/* Title */}
         <h4
-          className="text-[16px] font-semibold tracking-[-0.02em] text-gray-950 transition-colors duration-300 group-hover:text-blue-600"
+          className="text-[16px] font-bold tracking-[-0.02em] text-gray-950 transition-colors duration-300 group-hover:text-blue-600"
           style={{
             fontFamily:
               '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif',
@@ -65,3 +65,4 @@ function IndustryCard({ industry, index }) {
 }
 
 export default IndustryCard;
+

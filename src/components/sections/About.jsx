@@ -16,7 +16,7 @@ function About() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden py-16 sm:py-20 lg:py-24"
+      className="relative overflow-hidden py-16 sm:py-20 lg:py-24 transform-gpu"
       style={{
         fontFamily:
           '-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif',
@@ -30,48 +30,37 @@ function About() {
         <img
           src="/about.jpg"
           alt="About SmartView Technology"
+          loading="lazy"
+          decoding="async"
           className="h-full w-full object-cover"
         />
 
-        {/* Gradient overlays for depth */}
-        <div className="absolute inset-0 bg-black/50 backdrop-blur-[4px]" />
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-black/75" />
       </div>
 
       {/* ==========================================
-          SUBTLE BACKGROUND GLOW
-      ========================================== */}
-
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-0 z-0 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-blue-500/5 blur-3xl"
-      />
-
-      {/* ==========================================
-          MAIN CONTENT - LEFT ALIGNED WITH OFFSET
+          MAIN CONTENT
       ========================================== */}
 
       <Container>
         <div className="relative z-10">
-          {/* ==========================================
-              LEFT ALIGNED CONTENT WITH OFFSET
-          ========================================== */}
-
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-4xl pl-4 sm:pl-8 md:pl-12 lg:pl-16"
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            className="max-w-4xl pl-4 sm:pl-8 md:pl-12 lg:pl-16 transform-gpu"
           >
-            {/* Eyebrow / Label - Left Aligned */}
+            {/* Eyebrow / Label */}
             <div className="mb-4 flex items-center gap-4">
-              <span className="h-px w-8 bg-blue-600/60" />
-              <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-blue-600">
+              <span className="h-px w-8 bg-blue-500" />
+              <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-blue-400">
                 About Us
               </span>
             </div>
 
-            {/* Heading - Left Aligned */}
+            {/* Heading */}
             <h2
               className="text-4xl font-bold tracking-[-0.04em] text-white sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05]"
               style={{
@@ -84,9 +73,9 @@ function About() {
               <span className="text-white">Security Partner</span>
             </h2>
 
-            {/* Description - Left Aligned */}
+            {/* Description */}
             <p
-              className="mt-4 max-w-2xl text-[17px] font-light leading-relaxed text-gray-300 sm:text-lg"
+              className="mt-4 max-w-2xl text-[17px] font-normal leading-relaxed text-gray-200 sm:text-lg"
               style={{
                 fontFamily:
                   '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif',
@@ -98,7 +87,7 @@ function About() {
             </p>
 
             <p
-              className="mt-3 max-w-2xl text-[17px] font-light leading-relaxed text-gray-300 sm:text-lg"
+              className="mt-3 max-w-2xl text-[17px] font-normal leading-relaxed text-gray-200 sm:text-lg"
               style={{
                 fontFamily:
                   '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif',
@@ -109,25 +98,21 @@ function About() {
               most to you.
             </p>
 
-            {/* Subtle divider - Left Aligned */}
-            <div className="mt-8 h-px w-16 bg-gradient-to-r from-blue-400/40 to-transparent" />
+            {/* Subtle divider */}
+            <div className="mt-8 h-px w-16 bg-gradient-to-r from-blue-400/60 to-transparent" />
 
-            {/* Features List - Left Aligned */}
+            {/* Features List */}
             <div className="mt-8 max-w-xl space-y-3">
               {features.map((feature, index) => (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.4 }}
                   className="flex items-center gap-3"
                 >
-                  <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-600/10">
-                    <CheckCircle2 className="h-3.5 w-3.5 text-blue-600" />
+                  <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-500/20">
+                    <CheckCircle2 className="h-3.5 w-3.5 text-blue-400" />
                   </div>
                   <span
-                    className="text-[15px] text-gray-300"
+                    className="text-[15px] text-gray-200 font-medium"
                     style={{
                       fontFamily:
                         '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif',
@@ -135,7 +120,7 @@ function About() {
                   >
                     {feature}
                   </span>
-                </motion.div>
+                </div>
               ))}
             </div>
           </motion.div>
@@ -146,3 +131,4 @@ function About() {
 }
 
 export default About;
+
